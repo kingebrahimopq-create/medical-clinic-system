@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  # وظيفة بناء الويب الحالية
+  # وظيفة بناء الويب
   build-web:
     runs-on: ubuntu-latest
     steps:
@@ -28,7 +28,7 @@ jobs:
       - name: Build project
         run: pnpm build
 
-  # وظيفة بناء APK للأندرويد
+  # وظيفة بناء APK للأندرويد باستخدام Buildozer
   build-android:
     runs-on: ubuntu-latest
     steps:
