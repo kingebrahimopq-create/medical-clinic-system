@@ -1,4 +1,4 @@
-name: CI-Build-Direct
+name: CI-Build-Kivy
 
 on:
   push:
@@ -6,22 +6,16 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev libgstreamer1.0-gstreamer-lite-dev libgstreamer1.0-plugins-base-dev
-          pip3 install --user --upgrade buildozer Cython==0.29.33 virtualenv
-
-      - name: Build APK with Buildozer
-        run: |
-          export PATH=$PATH:$HOME/.local/bin
-          # قبول الشروط تلقائياً وتشغيل البناء
-          yes | buildozer -v android debug
+      - name: Build with Buildozer
+        uses: ArtemSerebrennikov/buildozer-action@v1
+        with:
+          workdir: .
+          buildozer_version: master
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
