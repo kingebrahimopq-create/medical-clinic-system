@@ -1,5 +1,27 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1776328062807,
+      "tag": "0000_last_doctor_strange",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1776328309160,
+      "tag": "0001_noisy_husk",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1776328399256,
+      "tag": "0002_useful_sally_floyd",
+      "breakpoints": true
+    }
+  ]
 }
