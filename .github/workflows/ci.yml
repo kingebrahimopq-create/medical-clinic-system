@@ -1,24 +1,26 @@
-name: CI-Build-and-APK
+name: CI-Build-Direct
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build-android:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build with Buildozer
-        # Using the absolute standard repository
-        uses: kivy/buildozer-action@v1
-        with:
-          workdir: .
-          buildozer_version: master
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev libgstreamer1.0-gstreamer-lite-dev libgstreamer1.0-plugins-base-dev
+          pip3 install --user --upgrade buildozer Cython==0.29.33
+
+      - name: Build APK with Buildozer
+        run: |
+          # قبول الشروط تلقائياً وتشغيل البناء في وضع التصحيح
+          yes | buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
