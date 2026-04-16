@@ -1,1 +1,1 @@
-Re-attempting build with official kivy/buildozer-action at: Thu Apr 16 01:11:43 PM UTC 2026
+Manual trigger at: 2026-04-16 13:31:31
