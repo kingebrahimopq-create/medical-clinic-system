@@ -1,23 +1,17 @@
-name: CI-Build-Kivy
-
+name: CI-Build-Android
 on:
   push:
     branches: [ main ]
-
 jobs:
-  build-android:
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Build with Buildozer
-        # Using a verified stable tag
         uses: kivy/buildozer-action@v1.2.2
         with:
           workdir: .
           buildozer_version: master
-
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:

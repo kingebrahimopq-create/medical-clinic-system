@@ -37,21 +37,21 @@ build = 1
 # pydist = sqlite3
 
 # (optional) Libraries to include from the Android NDK
-# android.libs = 
+# android.libs =
 
 # (optional) Java libraries to include
-# android.add_libs = 
+# android.add_libs =
 
 # (optional) Android Permissions
 android.permissions = INTERNET
 
 # (optional) A list of files to include in the APK
 # (relative to the source_dir)
-# include.files = 
+# include.files =
 
 # (optional) A list of folders to include in the APK
 # (relative to the source_dir)
-# include.dirs = 
+# include.dirs =
 
 # (optional) A list of recipes to use for the build
 # (e.g. `kivymd` for KivyMD apps)
@@ -87,7 +87,7 @@ fullscreen = 1
 # debug = 1
 
 # (optional) Use a custom AndroidManifest.xml file. Can be relative to the source_dir
-# android.manifest = 
+# android.manifest =
 
 # (optional) The minimum Android NDK version to use
 # android.minndk = 19c
@@ -96,10 +96,10 @@ fullscreen = 1
 # android.maxndk = 21
 
 # (optional) Extra command line arguments to pass to the build tool (e.g., `gradle`)
-# android.extra_args = 
+# android.extra_args =
 
 # (optional) Extra environment variables to set during the build process
-# android.extra_env = 
+# android.extra_env =
 
 # (optional) Force a specific toolchain for android
 # android.toolchain = clang
@@ -117,7 +117,7 @@ fullscreen = 1
 # android.things = 0
 
 # (optional) Additional values for the `config.py` file during the build
-# android.config_extra = 
+# android.config_extra =
 
 # (optional) Whether to use the `aapt` tool to generate the `R.java` file (default is True)
 # android.aapt = 1
