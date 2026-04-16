@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        # استخدام النسخة المستقرة والمتاحة
+        # استخدام الأكشن الرسمي والمستقر
         uses: kivymd/buildozer-action@v1.2.2
         with:
           workdir: .
