@@ -1,4 +1,4 @@
-name: CI-Build
+name: CI-Build-and-APK
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  # وظيفة بناء الويب الحالية
+  build-web:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,10 +21,28 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        # إزالة تحديد الإصدار يدوياً ليقوم الأكشن بقراءته من حقل packageManager في package.json
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: Build project
         run: pnpm build
+
+  # وظيفة بناء APK للأندرويد
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build with Buildozer
+        uses: kivy/buildozer-action@v1
+        with:
+          workdir: .
+          buildozer_version: master
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: medical-app-apk
+          path: bin/*.apk
