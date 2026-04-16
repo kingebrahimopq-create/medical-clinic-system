@@ -6,13 +6,14 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: kivy/buildozer-action@v1
+        # Correcting the action reference
+        uses: kivy/buildozer-action@master
         with:
           workdir: .
           buildozer_version: master
