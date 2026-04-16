@@ -30,8 +30,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        # استخدام الأكشن الرسمي والمستقر
-        uses: kivymd/buildozer-action@v1.2.2
+        # محاولة استخدام المسار الرسمي الأكثر استقراراً
+        uses: ArtemSerebrennikov/buildozer-action@v1
         with:
           workdir: .
           buildozer_version: master
