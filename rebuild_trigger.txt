@@ -1,1 +1,1 @@
-Runner update trigger at: Thu Apr 16 01:39:40 PM UTC 2026
+Fix: use ubuntu-22.04 to resolve set-up-job failure at: Thu Apr 16 01:46:08 PM UTC 2026
