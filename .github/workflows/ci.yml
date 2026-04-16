@@ -7,28 +7,22 @@ on:
     branches: [ main ]
 
 jobs:
-  # وظيفة بناء الويب
   build-web:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-
       - name: Build project
         run: pnpm build
 
-  # وظيفة بناء APK للأندرويد باستخدام Buildozer
   build-android:
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +30,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: kivy/buildozer-action@v1
+        # استخدام النسخة المستقرة والمتاحة
+        uses: kivymd/buildozer-action@v1.2.2
         with:
           workdir: .
           buildozer_version: master
