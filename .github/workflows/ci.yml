@@ -20,11 +20,10 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
+        # إزالة تحديد الإصدار يدوياً ليقوم الأكشن بقراءته من حقل packageManager في package.json
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build project
         run: pnpm build
