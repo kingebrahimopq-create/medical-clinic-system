@@ -1,64 +1,28 @@
 
 [app]
 
-title = Medical App
-package.name = medicalapp
-package.domain = org.test
+title = Medical Clinic System
+package.name = medicalclinic
+package.domain = org.medical.app
 source.dir = .
+source.include_exts = py,png,jpg,kv,atlas,ttf,json,xml
 
-# (optional) : The version number of your application
-# It is used for the android versioning only
 version = 0.1
 
-# (optional) The build version of the application
 build = 1
 
-# (optional) Your organization/company name for the app.
-# Used to generate the Android package name
-# organization = KivyMD
+android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
-# (optional) The Android SDK version to use
-# android.api = 27
-
-# (optional) The Android NDK version to use
-# android.ndk = 19c
-
-# (optional) The Android NDK directory (if you want to use a custom one)
-# android.ndk_path = /home/user/ndk
-
-# (optional) The Python version to use
-# python.version = 3
-
-# (optional) The Java version to use
-# java.version = 8
-
-# (optional) A list of Python modules to include
-# By default, a set of commonly used modules are included. Add more if needed.
-# pydist = sqlite3
-
-# (optional) Libraries to include from the Android NDK
-# android.libs =
-
-# (optional) Java libraries to include
-# android.add_libs =
-
-# (optional) Android Permissions
-android.permissions = INTERNET
-
-# (optional) A list of files to include in the APK
-# (relative to the source_dir)
-# include.files =
-
-# (optional) A list of folders to include in the APK
-# (relative to the source_dir)
-# include.dirs =
-
-# (optional) A list of recipes to use for the build
-# (e.g. `kivymd` for KivyMD apps)
 requirements = python3,kivy
 
-# (optional) Enable fullscreen mode for the app
-fullscreen = 1
+fullscreen = 0
+
+orientation = portrait
+
+android.minapi = 21
+android.targetapi = 33
+
+android.archs = arm64-v8a, armeabi-v7a
 
 # (optional) Icon for your application
 # icon.filename = icon.png
