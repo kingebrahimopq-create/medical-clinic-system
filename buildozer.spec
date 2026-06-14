@@ -24,6 +24,12 @@ android.targetapi = 33
 
 android.archs = arm64-v8a, armeabi-v7a
 
+# Accept SDK licenses automatically (needed for CI)
+android.accept_sdk_license = True
+
+# Use stable p4a branch
+p4a.branch = release-2024.01.21
+
 # (optional) Icon for your application
 # icon.filename = icon.png
 
